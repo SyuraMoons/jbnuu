@@ -4,14 +4,18 @@ interface PhotoFrameProps {
   src?: string;
   alt?: string;
   caption?: string;
+  label?: string;
   className?: string;
+  priority?: boolean;
 }
 
 export function PhotoFrame({
   src,
   alt = "",
   caption,
+  label,
   className = "",
+  priority = false,
 }: PhotoFrameProps) {
   return (
     <figure
@@ -36,6 +40,7 @@ export function PhotoFrame({
             src={src}
             alt={alt}
             fill
+            priority={priority}
             className="object-cover transition-transform duration-700 group-hover:scale-105"
           />
         ) : (
